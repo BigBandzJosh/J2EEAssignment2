@@ -1,5 +1,6 @@
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
-<%@ page import="com.example.j2eeassignment2.DatabaseConnection" %>
+<%@ page import="com.example.j2eeassignment2.dataBaseConn.DatabaseConnection" %>
+<%@ page import="com.example.j2eeassignment2.controller.Queries" %>
 <%@ page import="java.sql.*" %>
 
 
@@ -22,9 +23,9 @@
     </thead>
     <tbody>
     <%
-        DatabaseConnection db = new DatabaseConnection();
-        ResultSet rs;
-        rs = db.getResultSet();
+        Queries queries = new Queries();
+        ResultSet rs = queries.getProducts();
+
             while (rs.next()) {
     %>
     <tr>
@@ -41,6 +42,20 @@
 
     </tbody>
 </table>
+
+<h2>Insert Data</h2>
+<form method="post" action="InsertData.jsp">
+    Name: <label>
+    <input type="text" name="product_Name">
+</label><br>
+    Price: <label>
+    <input type="text" name="product_Price">
+</label><br>
+    Category: <label>
+    <input type="text" name="product_Category">
+</label><br>
+    <input type="submit" value="Submit">
+</form>
 
 </body>
 </html>

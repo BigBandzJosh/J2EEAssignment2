@@ -1,4 +1,4 @@
-package com.example.j2eeassignment2;
+package com.example.j2eeassignment2.dataBaseConn;
 
 import java.sql.*;
 
@@ -37,16 +37,7 @@ public class DatabaseConnection {
         }
     }
 
-    public ResultSet getResultSet() {
-        String query = "SELECT * FROM products";
-        try {
-            PreparedStatement preparedStatement = connection.prepareStatement(query);
-            return preparedStatement.executeQuery();
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
-        return null;
-    }
+
 
 
 

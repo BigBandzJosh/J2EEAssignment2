@@ -30,3 +30,4 @@ INSERT INTO products (product_name, product_price, product_category) VALUES ('Mo
 INSERT INTO products (product_name, product_price, product_category) VALUES ('Keyboard', 50.00,'Electronics');
 INSERT INTO products (product_name, product_price, product_category) VALUES ('Monitor', 200.00,'Electronics');
 INSERT INTO products (product_name, product_price, product_category) VALUES ('Printer', 150.00,'Electronics');
+INSERT INTO products (product_name, product_price, product_category) VALUES ('Tablet', 300.00,'Electronics');
