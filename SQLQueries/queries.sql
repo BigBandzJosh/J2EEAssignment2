@@ -18,14 +18,17 @@ CREATE TABLE orders (
 );
 
 CREATE TABLE products (
-                        id INT AUTO_INCREMENT PRIMARY KEY,
+product_id INT AUTO_INCREMENT PRIMARY KEY,
                         product_name VARCHAR(100),
-                        price DECIMAL(10, 2)
+                        product_price DECIMAL(10, 2),
+                        product_category VARCHAR(100)
 );
 
 
-INSERT INTO products (product_name, price) VALUES ('Laptop', 500.00);
-INSERT INTO products (product_name, price) VALUES ('Mouse', 20.00);
-INSERT INTO products (product_name, price) VALUES ('Keyboard', 50.00);
-INSERT INTO products (product_name, price) VALUES ('Monitor', 200.00);
-INSERT INTO products (product_name, price) VALUES ('Printer', 150.00);
+INSERT INTO products (product_name, product_price, product_category) VALUES ('Laptop', 500.00,'Electronics');
+INSERT INTO products (product_name, product_price, product_category) VALUES ('Mouse', 20.00 ,'Electronics');
+INSERT INTO products (product_name, product_price, product_category) VALUES ('Keyboard', 50.00,'Electronics');
+INSERT INTO products (product_name, product_price, product_category) VALUES ('Monitor', 200.00,'Electronics');
+INSERT INTO products (product_name, product_price, product_category) VALUES ('Printer', 150.00,'Electronics');
+INSERT INTO products (product_name, product_price, product_category) VALUES ('Tablet', 300.00,'Electronics');
+
