@@ -17,11 +17,14 @@
         <th>Product ID</th>
         <th>Product Name</th>
         <th>Product Price</th>
+
         <th>Product Category</th>
+
     </tr>
     </thead>
     <tbody>
     <%
+
         ProductQueries productQueries = new ProductQueries();
         ResultSet rs = productQueries.getProducts();
 
@@ -32,6 +35,7 @@
         <td><%= rs.getString("product_name") %></td>
         <td><%= rs.getDouble("product_price") %></td>
         <td><%= rs.getString("product_category") %></td>
+
     </tr>
     <%
         }
@@ -71,6 +75,7 @@
     </label>
     <input type="submit" value="Delete">
 </form>
+
 
 
 
