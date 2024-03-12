@@ -1,6 +1,5 @@
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
-<%@ page import="com.example.j2eeassignment2.dataBaseConn.DatabaseConnection" %>
-<%@ page import="com.example.j2eeassignment2.controller.Queries" %>
+<%@ page import="com.example.j2eeassignment2.controller.ProductQueries" %>
 <%@ page import="java.sql.*" %>
 
 
@@ -23,8 +22,8 @@
     </thead>
     <tbody>
     <%
-        Queries queries = new Queries();
-        ResultSet rs = queries.getProducts();
+        ProductQueries productQueries = new ProductQueries();
+        ResultSet rs = productQueries.getProducts();
 
             while (rs.next()) {
     %>
@@ -56,6 +55,26 @@
 </label><br>
     <input type="submit" value="Submit">
 </form>
+
+<h1>Search Products</h1>
+<form method="post" action="SearchProducts.jsp">
+    <label>
+        Product Category: <input type="text" name="category">
+    </label>
+    <input type="submit" value="Search">
+</form>
+
+<h1>Delete Product</h1>
+<form method="post" action="DeleteProducts.jsp">
+    <label>
+        Product name: <input type="text" name="product_name">
+    </label>
+    <input type="submit" value="Delete">
+</form>
+
+
+
+
 
 </body>
 </html>

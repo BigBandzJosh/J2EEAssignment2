@@ -6,7 +6,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
-public class Queries {
+public class ProductQueries {
 
     public ResultSet getProducts() {
         String query = "SELECT * FROM products";
@@ -20,7 +20,20 @@ public class Queries {
         return null;
     }
 
-    public void insertData(String product_Name, String product_Price, String product_Category){
+    public ResultSet getSpecificProduct(String Category) {
+        String query = "SELECT * FROM products WHERE product_Category = ?";
+        try {
+            DatabaseConnection connection = new DatabaseConnection();
+            PreparedStatement statement = connection.getConnection().prepareStatement(query);
+            statement.setString(1, Category);
+            return statement.executeQuery();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
+
+    public void insertProduct(String product_Name, String product_Price, String product_Category) {
         String query = "INSERT INTO products (product_Name, product_Price, product_Category) VALUES (?, ?, ?)";
         try {
             DatabaseConnection connection = new DatabaseConnection();
@@ -33,6 +46,18 @@ public class Queries {
             e.printStackTrace();
         }
     }
+;
+    public void deleteProduct(String product_Name) {
+        String query = "DELETE FROM products WHERE product_Name = ?";
+        try {
+            DatabaseConnection connection = new DatabaseConnection();
+            PreparedStatement statement = connection.getConnection().prepareStatement(query);
+            statement.setString(1, product_Name);
+            statement.executeUpdate();
+        } catch (SQLException e) {
+            e.printStackTrace();
 
 
+}
+    }
 }
