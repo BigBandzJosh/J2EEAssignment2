@@ -1,5 +1,6 @@
 package com.example.j2eeassignment2.dataBaseConn;
 
+
 import java.sql.*;
 
 
@@ -17,6 +18,7 @@ public class DatabaseConnection {
             String username = "root";
             String password = "";
             return DriverManager.getConnection(url, username, password);
+
         } catch (ClassNotFoundException e) {
             System.out.println("JDBC Driver not found.");
             e.printStackTrace();
@@ -36,6 +38,7 @@ public class DatabaseConnection {
             e.printStackTrace();
         }
     }
+
 
 
 
