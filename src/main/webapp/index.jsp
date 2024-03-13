@@ -10,8 +10,8 @@
 </head>
 <body>
 
-<h1>Welcome to our favorite <% %></h1>
 
+<h1>Welcome to our favorite <% %></h1>
 
 
 
@@ -25,12 +25,17 @@
         <th>Product ID</th>
         <th>Product Name</th>
         <th>Product Price</th>
+
+
+
         <th>Product Category</th>
+
+
     </tr>
     </thead>
     <tbody>
     <%
-        ProductQueries productQueries = new ProductQueries();
+       ProductQueries productQueries = new ProductQueries();
         ResultSet rs = productQueries.getProducts();
 
             while (rs.next()) {
@@ -40,6 +45,7 @@
         <td><%= rs.getString("product_name") %></td>
         <td><%= rs.getDouble("product_price") %></td>
         <td><%= rs.getString("product_category") %></td>
+
     </tr>
     <%
         }
@@ -80,6 +86,7 @@
     <input type="submit" value="Delete">
 </form>
 
+
 <h1>Register</h1>
 <form method="post" action="Register.jsp">
     <label>
@@ -119,6 +126,7 @@
     </label><br>
     <input type="submit" value="Login">
 </form>
+
 
 
 
