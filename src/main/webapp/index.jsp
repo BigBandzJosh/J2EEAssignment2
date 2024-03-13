@@ -9,6 +9,14 @@
     <title>Order Management</title>
 </head>
 <body>
+
+
+<h1>Welcome to our favorite <% %></h1>
+
+
+
+
+
 <h1>Products!</h1>
 
 <table>
@@ -18,14 +26,16 @@
         <th>Product Name</th>
         <th>Product Price</th>
 
+
+
         <th>Product Category</th>
+
 
     </tr>
     </thead>
     <tbody>
     <%
-
-        ProductQueries productQueries = new ProductQueries();
+       ProductQueries productQueries = new ProductQueries();
         ResultSet rs = productQueries.getProducts();
 
             while (rs.next()) {
@@ -75,6 +85,48 @@
     </label>
     <input type="submit" value="Delete">
 </form>
+
+
+<h1>Register</h1>
+<form method="post" action="Register.jsp">
+    <label>
+        First Name: <input type="text" name="first_name">
+    </label><br>
+    <label>
+        Last Name: <input type="text" name="last_name">
+    </label><br>
+
+    <label>
+        Email: <input type="text" name="email">
+    </label><br>
+
+    <label>
+        Phone Number: <input type="text" name="phone">
+    </label><br>
+
+    <label>
+        Address: <input type="text" name="address">
+    </label><br>
+
+    <label>
+        Password: <input type="password" name="password">
+    </label><br>
+    <input type="submit" value="Register">
+
+</form>
+
+<h1>Login</h1>
+
+<form method="post" action="Login.jsp">
+    <label>
+        Email: <input type="text" name="email">
+    </label><br>
+    <label>
+        Password: <input type="password" name="password">
+    </label><br>
+    <input type="submit" value="Login">
+</form>
+
 
 
 
