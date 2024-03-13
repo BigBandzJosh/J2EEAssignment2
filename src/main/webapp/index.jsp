@@ -10,8 +10,9 @@
 </head>
 <body>
 
-
-<h1>Welcome to our favorite <% %></h1>
+<%
+String emailHeader = (String) request.getSession().getAttribute("email");
+%> <h1>Welcome <%= emailHeader %></h1>
 
 
 

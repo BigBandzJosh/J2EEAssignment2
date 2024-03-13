@@ -13,7 +13,12 @@
     <title>login</title>
 </head>
 <body>
-<h1>Login</h1>
+<%--Display a welcome message to the logged in user--%>
+
+
+
+
+
 
 <%
     String email = request.getParameter("email");
@@ -21,6 +26,8 @@
     if (email != null && password != null) {
         LoginServlet loginServlet = new LoginServlet();
         if (loginServlet.loginUser(email, password)) {
+            request.getSession().setAttribute("email", email);
+
 
             response.sendRedirect("index.jsp");
         } else {
@@ -31,6 +38,8 @@
 
 
 %>
+
+
 
 </body>
 </html>
