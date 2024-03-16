@@ -20,6 +20,19 @@ public class ProductQueries {
         return null;
     }
 
+    public ResultSet getSpecificProduct(int product_Id) {
+        String query = "SELECT * FROM products WHERE product_Id = ?";
+        try {
+            DatabaseConnection connection = new DatabaseConnection();
+            PreparedStatement statement = connection.getConnection().prepareStatement(query);
+            statement.setInt(1, product_Id);
+            return statement.executeQuery();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
+
     public ResultSet getSpecificProduct(String Category) {
         String query = "SELECT * FROM products WHERE product_Category = ?";
         try {
@@ -33,20 +46,23 @@ public class ProductQueries {
         return null;
     }
 
-    public void insertProduct(String product_Name, String product_Price, String product_Category) {
-        String query = "INSERT INTO products (product_Name, product_Price, product_Category) VALUES (?, ?, ?)";
+    public void insertProduct(String product_Name, String product_Price, String product_Category, String product_Quantity) {
+        String query = "INSERT INTO products (product_Name, product_Price, product_Category, product_Quantity) VALUES (?, ?, ?,?)";
         try {
             DatabaseConnection connection = new DatabaseConnection();
             PreparedStatement statement = connection.getConnection().prepareStatement(query);
             statement.setString(1, product_Name);
             statement.setString(2, product_Price);
             statement.setString(3, product_Category);
+            statement.setString(4, product_Quantity);
             statement.executeUpdate();
         } catch (SQLException e) {
             e.printStackTrace();
         }
     }
-;
+
+    ;
+
     public void deleteProduct(String product_Name) {
         String query = "DELETE FROM products WHERE product_Name = ?";
         try {
@@ -58,6 +74,25 @@ public class ProductQueries {
             e.printStackTrace();
 
 
-}
+        }
     }
+
+
+
+    public void updateProduct(String product_Name, String product_Price, String product_Category, int product_Id) {
+        String query = "UPDATE products SET product_Name = ?, product_Price = ?, product_Category = ? WHERE product_Id = ?";
+        try {
+            DatabaseConnection connection = new DatabaseConnection();
+            PreparedStatement statement = connection.getConnection().prepareStatement(query);
+            statement.setString(1, product_Name);
+            statement.setString(2, product_Price);
+            statement.setString(3, product_Category);
+            statement.setInt(4, product_Id);
+            statement.executeUpdate();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+
+
 }

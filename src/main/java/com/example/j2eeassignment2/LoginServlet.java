@@ -26,7 +26,6 @@ public class LoginServlet {
     public void init() {
     }
 
-
     public boolean loginUser(String email, String password) {
         String query = "SELECT * FROM customers WHERE email = ?";
         try {
