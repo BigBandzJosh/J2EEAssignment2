@@ -35,6 +35,7 @@ CREATE TABLE IF NOT EXISTS product_reviews (
                         FOREIGN KEY (product_id) REFERENCES products(product_id)
 );
 
+
 CREATE TABLE IF NOT EXISTS order_items (
                         id INT AUTO_INCREMENT PRIMARY KEY,
                         order_id INT,
@@ -43,6 +44,11 @@ CREATE TABLE IF NOT EXISTS order_items (
                         FOREIGN KEY (order_id) REFERENCES orders(id),
                         FOREIGN KEY (product_id) REFERENCES products(product_id)
 );
+
+
+
+
+
 
 
 INSERT INTO products (product_name, product_price, product_category, product_quantity) VALUES ('Laptop', 500.00,'Electronics', 1);
@@ -56,7 +62,7 @@ INSERT INTO products (product_name, product_price, product_category, product_qua
 INSERT INTO products (product_name, product_price, product_category, product_quantity) VALUES ('Earbuds', 50.00,'Electronics',8);
 INSERT INTO products (product_name, product_price, product_category, product_quantity) VALUES ('Camera', 200.00,'Electronics',9);
 INSERT INTO products (product_name, product_price, product_category, product_quantity) VALUES ('Television', 600.00,'Electronics',10);
-# Insert products with 3 different categories
+
 INSERT INTO products (product_name, product_price, product_category, product_quantity) VALUES ('T-shirt', 20.00,'Clothing',11);
 INSERT INTO products (product_name, product_price, product_category, product_quantity) VALUES ('Jeans', 50.00,'Clothing',12);
 INSERT INTO products (product_name, product_price, product_category, product_quantity) VALUES ('Sweater', 100.00,'Clothing',13);

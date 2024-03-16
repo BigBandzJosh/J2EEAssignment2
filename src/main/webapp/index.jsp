@@ -14,6 +14,7 @@
 String emailHeader = (String) request.getSession().getAttribute("email");
 %> <h1>Welcome <%= emailHeader %></h1>
 
+
 <h1>Products!</h1>
 
 <table>
