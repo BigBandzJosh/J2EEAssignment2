@@ -13,12 +13,6 @@
     <title>login</title>
 </head>
 <body>
-<%--Display a welcome message to the logged in user--%>
-
-
-
-
-
 
 <%
     String email = request.getParameter("email");
@@ -34,12 +28,7 @@
             response.sendRedirect("error.jsp");
         }
     }
-
-
-
 %>
-
-
 
 </body>
 </html>

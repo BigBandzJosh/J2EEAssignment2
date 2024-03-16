@@ -31,19 +31,4 @@ public class DatabaseConnection {
     }
 
 
-    public void closeConnection() {
-        try {
-            connection.close();
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
-    }
-
-
-
-
-
-
-
-
 }
